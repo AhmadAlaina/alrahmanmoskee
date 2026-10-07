@@ -1,9 +1,9 @@
 const e=`
-    
 
-    
-      
-        
+
+
+
+
 
           <h2>Artikel 1. Begripsbepalingen</h2>
           <p>In deze statuten wordt verstaan onder:</p>
@@ -145,7 +145,7 @@ const e=`
           <h2>Artikel 15. Overgangsbepaling</h2>
           <p>Het eerste boekjaar van de Stichting loopt tot en met eenendertig december tweeduizend zestien. Dit artikel vervalt nadat het eerste boekjaar is geëindigd.</p>
 
-        
-      
-    
-  `;export{e as statutes};
+
+
+
+`;export{e as statutes};
