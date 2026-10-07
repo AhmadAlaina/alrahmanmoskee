@@ -1,6 +1,22 @@
 {
-  "name": "alrahman-moskee", "version": "1.0.0", "private": true, "type": "module",
-  "scripts": { "dev": "vite --host 0.0.0.0", "build": "vite build", "preview": "vite preview --host 0.0.0.0", "test": "node --test tests/*.test.js" },
-  "dependencies": { "adhan": "^4.4.3", "lucide": "^0.468.0", "qrcode": "^1.5.4" },
-  "devDependencies": { "vite": "^7.1.0", "jsqr": "^1.4.0", "pngjs": "^7.0.0" }
+  "name": "alrahman-moskee",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build && node scripts/prepare-publication.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "adhan": "^4.4.3",
+    "lucide": "^0.468.0",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0",
+    "jsqr": "^1.4.0",
+    "pngjs": "^7.0.0"
+  }
 }

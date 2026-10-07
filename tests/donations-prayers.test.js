@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import QRCode from 'qrcode';
 import jsQR from 'jsqr';
 import { PNG } from 'pngjs';
-import { donationLink, paymentLinks, prayerSchedule } from '../src/data.js';
+import { donationLink, paymentLinks, prayerSchedule } from '../site/src/data.js';
 
 for (const purpose of ['general', 'renovation']) {
   test(`${purpose}: QR decodes to the same verified WhatsApp recipient and correct purpose`, async () => {

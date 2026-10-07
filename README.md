@@ -9,16 +9,22 @@ Node.js 22.12+ (geverifieerd met 24.14.1) en npm:
 ```sh
 npm ci
 npm run dev -- --port 3000
-npm test
 npm run build
+npm test
 ```
 
-Publiceer de map `dist/` na de build op de webserver. Alle pagina's zijn afzonderlijke HTML-ingangen; er is geen serverdatabase nodig. `nieuwbouw.html` verwijst door naar `onderhoud.html` voor bestaande links.
+## Publiceren met Plesk Git
+
+De repository bevat de **gebouwde website direct in de hoofdmap**: HTML-pagina's, `assets/`, `images/` en `documenten/`. Plesk kan deze bestanden rechtstreeks publiceren zonder Node.js op de hostingserver. Gebruik de HTTPS-clonelink `https://github.com/AhmadAlaina/alrahmanmoskee.git` en selecteer de branch met de laatste wijzigingen.
+
+De bewerkbare bronbestanden staan in `site/`; afbeeldingen en documenten komen uit `public/`. Voer na inhoudelijke wijzigingen `npm run build` uit. Die opdracht bouwt `dist/` en vernieuwt de publicatiebestanden in de hoofdmap. Commit en push de bronbestanden **en** deze publicatiebestanden samen. Publiceer nooit alleen `site/`.
+
+Voor handmatig uploaden kun je ook de inhoud van `dist/` gebruiken. Alle pagina's zijn afzonderlijke HTML-ingangen; er is geen serverdatabase nodig. `nieuwbouw.html` verwijst door naar `onderhoud.html` voor bestaande links.
 
 ## Inhoud en donaties
 
-- Pagina-inhoud en navigatie: `src/main.js`. Vormgeving: `src/style.css`.
-- Bankgegevens, donatienummer en betaallinks: `src/data.js`.
+- Pagina-inhoud en navigatie: `site/src/main.js`. Vormgeving: `site/src/style.css`.
+- Bankgegevens, donatienummer en betaallinks: `site/src/data.js`.
 - QR-codes worden lokaal gegenereerd, zonder externe QR-dienst. Standaard openen ze een WhatsApp-bericht naar het bestaande donatienummer om een betaallink aan te vragen. Dit is geen directe bankbetaling. De knop en QR gebruiken dezelfde bestemming.
 - Vervang `paymentLinks.general` en `paymentLinks.renovation` alleen door door de moskee bevestigde HTTPS-betaallinks. De bijschriften veranderen dan automatisch. Controleer ontvanger en beide QR-codes voor publicatie.
 - Berekende gebedstijden via Adhan: Middelburg, Muslim World League, Hanafi, Europe/Amsterdam. Dit zijn geen bevestigde iqama-tijden. Geen externe API of credentials vereist.
